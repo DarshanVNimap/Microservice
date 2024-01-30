@@ -1,0 +1,23 @@
+server:
+  port: 8001
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/hotelservice
+    password: root
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+  application:
+    name: HOTEL-SERVICE
+    
+  config:
+    import: configserver:http://localhost:8006
+
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://localhost:8004/eureka
