@@ -3,6 +3,7 @@ package com.identityService.entity;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,6 +14,7 @@ import lombok.Setter;
 @Setter
 public class UserEntity {
 	
+	@Id
 	private String id;
 	private String firstName;
 	private String lastName;
