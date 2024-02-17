@@ -11,5 +11,6 @@ public interface AuthService {
 	
 	public ResponseDto registerUser(UserRequest request);
 	public TokenResponse loginUser(LoginRequest loginRequest) throws UserPrincipalNotFoundException;
+	public boolean validateToken(String token);
 
 }

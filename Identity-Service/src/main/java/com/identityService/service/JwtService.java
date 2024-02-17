@@ -69,6 +69,11 @@ public class JwtService {
 	private Date extractExpiration(String token) {
 		return extractClaim(token, Claims::getExpiration);
 	}
+	
+	public boolean isValidToken(String token) {
+		 Jwts.parserBuilder().setSigningKey(getSigningKey()).build().parseClaimsJws(token);
+		 return true;
+	}
 
 
 }

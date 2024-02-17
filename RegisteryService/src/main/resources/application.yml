@@ -1,5 +1,9 @@
 server:
   port: 8004
+  
+spring:
+  application:
+    name: REGISTERY-SERVICE
 
 eureka:
   instance:

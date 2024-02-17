@@ -17,8 +17,9 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
 
-
+@RequiredArgsConstructor
 public class JwtFilter extends OncePerRequestFilter {
 	
 	@Autowired
@@ -27,8 +28,7 @@ public class JwtFilter extends OncePerRequestFilter {
 	@Autowired
 	private UserDetailsService userDetailsService;
 	
-	@Autowired
-	private HandlerExceptionResolver exceptionResolver;
+	private final HandlerExceptionResolver exceptionResolver;
 
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)

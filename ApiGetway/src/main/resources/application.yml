@@ -22,6 +22,11 @@ spring:
           uri: lb://RATING-SERVICE
           predicates:
           - path=/api/rating/**
+          
+        - id: IDENTITY-SERVICE
+          uri: lb://IDENTITY-SERVICE
+          predicates:
+          - path=/api/auth/**
 eureka:
   client:
     register-with-eureka: true

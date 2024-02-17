@@ -1,36 +1,26 @@
 package com.identityService.config;
 
 import java.util.Collection;
-import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.identityService.entity.UserEntity;
 
+import lombok.RequiredArgsConstructor;
 
+
+@RequiredArgsConstructor
 public class CustomeUserDetail implements UserDetails {
 	
+	private static final long serialVersionUID = 4911445725029108973L;
+	
 	private final UserEntity user;
-	private List<GrantedAuthority> authorities ;
-	
-	
-
-	public CustomeUserDetail(UserEntity user) {
-		super();
-		this.user = user;
-	}
-
-	public CustomeUserDetail(UserEntity user, List<GrantedAuthority> authorities) {
-		super();
-		this.user = user;
-		this.authorities = authorities;
-	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
-		return authorities;
+		return null;
 	}
 
 	@Override
@@ -42,7 +32,7 @@ public class CustomeUserDetail implements UserDetails {
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
-		return user.getPassword();
+		return user.getEmail();
 	}
 
 	@Override
